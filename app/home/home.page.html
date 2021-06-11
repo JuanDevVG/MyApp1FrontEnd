@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="home-outline"></ion-icon>
+      Ejemplo Aplicacion movil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-avatar id="myAvatar">
+    <img src="../assets/img/iconopc.ico">
+  </ion-avatar>
+
+  <ion-item>
+    <ion-label position="floating">Digite nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-button (click)="datos()" color="primary" expand="block">Ingresar</ion-button>
+  <ion-button (click)="listar()" color="warning" expand="block">Listar</ion-button>
+  <ion-button (click)="ayuda()" color="secondary" expand="block">Ayuda</ion-button>
+  <div *ngIf="mostrar">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae eaque aspernatur voluptas ipsum sapiente! Rerum provident corrupti ut illum ad, dolor voluptate laboriosam, molestiae veritatis reprehenderit vitae cum? Illo, perferendis.
+  </div>
+</ion-content>

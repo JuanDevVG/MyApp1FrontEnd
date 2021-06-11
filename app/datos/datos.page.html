@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    Bienvenido {{nombre}}
+
+    <ion-item *ngFor="let dato of datos">
+      {{dato.nombre}}
+      {{dato.apellido}}
+      {{dato.edad}}
+      <div *ngIf="dato.edad >= 18; else menor">
+        <h6>Es mayor de edad</h6>
+      </div>
+      <ng-template #menor>
+        Es menor de edad
+      </ng-template>
+    </ion-item>
+    <ion-item (click)="elegido(i)" *ngFor="let deporte of deportes; let i=index">
+      {{deporte}}
+    </ion-item>
+
+    <div *ngFor="let dato of datos">
+      <div *ngIf="dato.deporte == deporteElegido">
+        {{dato.nombre}} practica {{dato.deporte}}
+        <img src="{{dato.imagen}}" alt="imagen deporte">
+      </div>
+    </div>
+
+</ion-content>
